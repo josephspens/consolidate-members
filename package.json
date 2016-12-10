@@ -4,7 +4,8 @@
   "description": "Consolidate members of Space Apps NYC across data sources",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "example": "node index.js -s meetup -t mailchimp ~/Downloads/Space-Apps-NYC_Member_List_on_12-10-16.xls ./mailchimp.json",
+    "test": "mocha --colors --growl --recursive ./lib"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,12 @@
   },
   "homepage": "https://github.com/josephspens/consolidate-members#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "co": "^4.6.0",
+    "commander": "^2.9.0",
+    "fast-csv": "^2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
