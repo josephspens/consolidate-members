@@ -1,0 +1,22 @@
+{
+  "name": "san-consolidate-members",
+  "version": "1.0.0",
+  "description": "Consolidate members of Space Apps NYC across data sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/josephspens/consolidate-members.git"
+  },
+  "author": "Joseph Spens <joseph@spaceapps.nyc>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josephspens/consolidate-members/issues"
+  },
+  "homepage": "https://github.com/josephspens/consolidate-members#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
