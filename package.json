@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "example": "node index.js -s meetup -t mailchimp ~/Downloads/Space-Apps-NYC_Member_List_on_12-10-16.xls ./mailchimp.json",
-    "test": "mocha --colors --growl --recursive ./lib",
-    "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test": "nyc mocha --colors --growl --recursive ./lib && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
