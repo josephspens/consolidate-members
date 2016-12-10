@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/josephspens/consolidate-members.git"
+    "url": "git@github.com:josephspens/consolidate-members.git"
   },
   "author": "Joseph Spens <joseph@spaceapps.nyc>",
   "license": "MIT",
