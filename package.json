@@ -4,8 +4,10 @@
   "description": "Consolidate members of Space Apps NYC across data sources",
   "main": "index.js",
   "scripts": {
-    "example": "node index.js -s meetup -t mailchimp ~/Downloads/Space-Apps-NYC_Member_List_on_12-10-16.xls ./mailchimp.json",
-    "test": "nyc mocha --colors --growl --recursive ./lib && nyc report --reporter=text-lcov | coveralls"
+    "example": "node index.js -t meetup ~/Downloads/Space-Apps-NYC_Member_List_on_12-10-16.xls",
+    "test": "nyc mocha --colors --growl --recursive ./lib",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test:watch": "mocha --colors --growl --recursive --watch ./lib"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,8 @@
   "dependencies": {
     "co": "^4.6.0",
     "commander": "^2.9.0",
-    "fast-csv": "^2.3.0"
+    "fast-csv": "^2.3.0",
+    "node-fetch": "^1.6.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",

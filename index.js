@@ -9,41 +9,19 @@ const writeMeetup = require('./lib/meetup/write');
 const { checkDataSet } = require('./lib/utils');
 
 program
-  .arguments('<input> <output>')
-  .option('-s, --source <source>', 'The source data set from which we are consolidating')
+  .arguments('<input>')
   .option('-t, --target <target>', 'The target data set to which we are consolidating')
-  .action((input, output) => {
+  .action((input) => {
     try {
-      checkDataSet('source', program.source);
       checkDataSet('target', program.target);
     } catch (exception) {
       console.error(exception.message);
       process.exit(1);
     }
 
-    console.log(`Consolidating from ${program.source} file ${input} to ${program.target} file ${output}`);
-
-    let sourceProcess;
-    let targetProcess;
-
-    switch (program.source) {
-      case 'meetup':
-        sourceProcess = parseMeetup;
-        break;
-      case 'mailchimp':
-        sourceProcess = parseMeetup;
-        break;
+    console.log(`Consolidating ${input} for ${program.target}`);
+    if (program.target === 'meetup') {
+      parseMeetup(input).then(writeMeetup);
     }
-
-    switch (program.target) {
-      case 'meetup':
-        targetProcess = writeMeetup;
-        break;
-      case 'mailchimp':
-        targetProcess = writeMeetup;
-        break;
-    }
-
-    sourceProcess(input, targetProcess(output));
   })
   .parse(process.argv);
